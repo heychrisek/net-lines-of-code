@@ -1,5 +1,6 @@
 {
-  "name": "NetLOC",
+  "name": "Net Lines Of Code",
+  "short_name": "NetLOC",
   "manifest_version": 2,
   "version": "0.1",
   "description": "Calculates and displays the net lines of code changed on a BitBucket branch or pull request.",
@@ -8,7 +9,7 @@
             "128" : "images/icon128.png" },
   "content_scripts": [
     {
-      "matches": ["https://*.bitbucket.org/*pull-request/*", "https://*.bitbucket.org/*branch/*"],
+      "matches": ["https://*.bitbucket.org/*pull-request/*", "https://*.bitbucket.org/*branch/*", "https://*.bitbucket.org/*commits/*"],
       "js": ["jquery-2.1.3.min.js", "calculate-lines-of-code.js"]
     }
   ]

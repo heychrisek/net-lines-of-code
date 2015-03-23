@@ -42,7 +42,7 @@ var calculateLinesOfCode = setInterval(function () {
   domNodeToAppend += linesAdded
   domNodeToAppend += '</span><span class="lines-removed">-'
   domNodeToAppend += linesRemoved
-  domNodeToAppend +=  '</span></div><div style="width:300px; font-style:italic;" class="count-badge">Net change: '
+  domNodeToAppend +=  '</span></div><div style="width:100%; font-style:italic;" class="count-badge">Net change: '
   domNodeToAppend += formatOffset(offset)
   domNodeToAppend += '</div></li>'
 
