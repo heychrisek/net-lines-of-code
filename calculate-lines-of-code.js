@@ -29,12 +29,15 @@ var calculateLinesOfCode = setInterval(function () {
   }
 
   formatOffset = function(offset) {
+    var noun;
     if (offset > 0) {
-      return "<span style='font-weight:bold; color: green;'>" + offset + " lines of code added</span>"
+      noun = (offset === 1) ? ' line ' : ' lines ';
+      return "Net change: <span style='font-weight:bold; color: green;'>" + offset + noun + "of code added</span>"
     } else if (offset === 0) {
-      return "net change of 0"
+      return "No net change"
     } else {
-      return "<span style='font-weight:bold; color: red;'>" + Math.abs(offset) + " lines of code removed</span>"
+      noun = (offset === -1) ? ' line ' : ' lines ';
+      return "Net change: <span style='font-weight:bold; color: red;'>" + Math.abs(offset) + noun + "of code removed</span>"
     }
   }
 
@@ -42,7 +45,7 @@ var calculateLinesOfCode = setInterval(function () {
   domNodeToAppend += linesAdded
   domNodeToAppend += '</span><span class="lines-removed">-'
   domNodeToAppend += linesRemoved
-  domNodeToAppend +=  '</span></div><div style="width:100%; font-style:italic;" class="count-badge">Net change: '
+  domNodeToAppend +=  '</span></div><div style="width:100%; font-style:italic;" class="count-badge">'
   domNodeToAppend += formatOffset(offset)
   domNodeToAppend += '</div></li>'
 

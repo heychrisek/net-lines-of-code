@@ -2,7 +2,7 @@
   "name": "Net Lines Of Code",
   "short_name": "NetLOC",
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "0.2.1",
   "description": "Calculates and displays the net lines of code changed on a BitBucket branch or pull request.",
   "icons": { "16" : "images/icon16.png",
              "48" : "images/icon48.png",
