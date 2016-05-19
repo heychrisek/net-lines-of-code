@@ -10,7 +10,7 @@ var calculateLinesOfCode = setInterval(function () {
     $(className).each(function() {
       var val;
       val = $(this).html().replace(symbolToReplace, '');
-      return results.push(parseInt(val));
+      return results.push(parseInt(val) || 0);
     });
     if (results.length > 0) {
       return results.reduce(function(x, y) {
@@ -52,4 +52,6 @@ var calculateLinesOfCode = setInterval(function () {
   $('ul.commit-files-summary').append(domNodeToAppend);
 }, 100);
 
-calculateLinesOfCode();
+if (typeof(calculateLinesOfCode) === "function") {
+  calculateLinesOfCode();
+}
